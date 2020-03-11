@@ -13,6 +13,6 @@ class MainActivity : AppCompatActivity() {
         //to wait until we have a class activity for that view to implement the expression
         //below but I wanted to shwo that we had it ready to go when needed
         //requestedOrientation =  (ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.signup)
+        setContentView(R.layout.activity_main)
     }
 }

@@ -4,7 +4,13 @@ import android.media.Image
 import android.provider.ContactsContract
 import java.util.*
 
-data class User(var fullName: String, var userName: String, var email: ContactsContract.CommonDataKinds.Email, private var password: String) {
+data class User(
+    var userID: String,
+    var fullName: String,
+    var userName: String,
+    var email: ContactsContract.CommonDataKinds.Email,
+    private var password: String
+) {
     lateinit var profileImage: Image
     lateinit var bio: String
     lateinit var work: String

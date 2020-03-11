@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity() {
 
         createAccountButton.setOnClickListener{
             // TODO: Handle account creation logic
+            val intent = Intent(this, SignupActivity::class.java)
+            startActivity(intent)
         }
     }
 }

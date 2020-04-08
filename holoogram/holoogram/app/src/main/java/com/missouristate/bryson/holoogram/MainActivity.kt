@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.facebook.*
+import com.facebook.AccessToken
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 
+private const val AccessTokenForIntent = "Access Token"
 
 class MainActivity : AppCompatActivity() {
     private lateinit var loginButton: Button
@@ -52,6 +54,7 @@ class MainActivity : AppCompatActivity() {
                 val isLoggedIn = accessToken != null && !accessToken.isExpired
                 if (isLoggedIn) {
                     val intent = Intent(this@MainActivity, HomepageActivity::class.java)
+                    intent.putExtra(AccessTokenForIntent, accessToken)
                     startActivity(intent)
                 }
             }

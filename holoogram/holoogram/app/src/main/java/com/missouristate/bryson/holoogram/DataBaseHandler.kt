@@ -58,7 +58,7 @@ class DataBaseHandler(context: Context, name: String?, factory: SQLiteDatabase.C
         val db = this.writableDatabase
         // Creating content values
         val values = ContentValues()
-        values.put(KEY_ID, user.userID)
+        values.put(KEY_ID, user.userID.toString())
         values.put(FULL_NAME, user.fullName)
         values.put(USERNAME, user.userName)
         values.put(EMAIL, user.email.toString())

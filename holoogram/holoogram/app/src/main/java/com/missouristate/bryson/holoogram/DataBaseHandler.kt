@@ -38,7 +38,7 @@ class DataBaseHandler(context: Context, name: String?, factory: SQLiteDatabase.C
         )
     }
 
-    val allStudentsList: ArrayList<String>
+    val allUsersList: ArrayList<String>
         get() {
             val usersArrayList = ArrayList<String>()
             var name = ""

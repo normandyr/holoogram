@@ -1,6 +1,7 @@
 package com.missouristate.bryson.holoogram
 
 import android.content.Intent
+import android.os.AsyncTask
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import com.facebook.*
 import com.facebook.AccessToken
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
+import org.json.JSONObject
 
 private const val AccessTokenForIntent = "Access Token"
 
@@ -45,7 +47,6 @@ class MainActivity : AppCompatActivity() {
         FacebookSdk.sdkInitialize(applicationContext)
         //AppEventsLogger.activateApp(this)
 
-
         callbackManager = CallbackManager.Factory.create()
 
         LoginManager.getInstance().registerCallback(callbackManager, object : FacebookCallback<LoginResult?> {
@@ -54,8 +55,15 @@ class MainActivity : AppCompatActivity() {
                 val isLoggedIn = accessToken != null && !accessToken.isExpired
                 if (isLoggedIn) {
                     val intent = Intent(this@MainActivity, HomepageActivity::class.java)
-                    intent.putExtra(AccessTokenForIntent, accessToken)
-                    startActivity(intent)
+                    var request: GraphRequest = GraphRequest.newMeRequest(
+                        AccessToken.getCurrentAccessToken()
+                    ) { jsonObject, response ->
+                        intent.putExtra("facebookData", FacebookHelpers.getFacebookData(jsonObject))
+                        intent.putExtra("jsonString", jsonObject.toString())
+                        intent.putExtra("profilePic", FacebookHelpers.getFacebookProfilePicture())
+                        startActivity(intent)
+                    }
+                    request.executeAsync()
                 }
             }
 

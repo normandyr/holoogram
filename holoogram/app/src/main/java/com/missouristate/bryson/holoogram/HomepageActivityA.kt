@@ -6,9 +6,11 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.facebook.login.LoginManager
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
@@ -20,6 +22,7 @@ private lateinit var facebookData: Bundle
 private lateinit var jsonMap: Map<String, Any>
 private lateinit var fullNameField: EditText
 private lateinit var profilePic: ImageView
+private lateinit var logoutButton: Button
 
 class HomepageActivityA : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +38,14 @@ class HomepageActivityA : AppCompatActivity(){
         fullNameField.setText(jsonMap["name"].toString())
         profilePic = findViewById(R.id.imageView_UserImage_Homepage)
         profilePic.setImageBitmap(intent.getParcelableExtra("profilePic") as Bitmap)
+        logoutButton = findViewById(R.id.button_logout)
+
+        logoutButton.setOnClickListener {
+            LoginManager.getInstance().logOut()
+            val intent = Intent(applicationContext, LoginActivityA::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -23,7 +23,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
         //requestedorientation is only used for the video view.  We will need
         //to wait until we have a class activity for that view to implement the expression
         //below but I wanted to shwo that we had it ready to go when needed
@@ -54,20 +53,7 @@ class LoginActivity : AppCompatActivity() {
 
         LoginManager.getInstance().registerCallback(callbackManager, object : FacebookCallback<LoginResult?> {
             override fun onSuccess(loginResult: LoginResult?) { // App code
-                val accessToken = AccessToken.getCurrentAccessToken()
-                val isLoggedIn = accessToken != null && !accessToken.isExpired
-                if (isLoggedIn) {
-                    val intent = Intent(this@LoginActivity, HomepageActivity::class.java)
-                    var request: GraphRequest = GraphRequest.newMeRequest(
-                        AccessToken.getCurrentAccessToken()
-                    ) { jsonObject, response ->
-                        intent.putExtra("facebookData", FacebookHelpers.getFacebookData(jsonObject))
-                        intent.putExtra("jsonString", jsonObject.toString())
-                        intent.putExtra("profilePic", FacebookHelpers.getFacebookProfilePicture())
-                        startActivity(intent)
-                    }
-                    request.executeAsync()
-                }
+                handleLoginStuff()
             }
 
             override fun onCancel() { // App code
@@ -77,6 +63,12 @@ class LoginActivity : AppCompatActivity() {
             }
         })
     }
+
+    override fun onStart() {
+        super.onStart()
+        handleLoginStuff()
+    }
+
     override fun onActivityResult(
         requestCode: Int,
         resultCode: Int,
@@ -102,5 +94,22 @@ class LoginActivity : AppCompatActivity() {
 
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    fun handleLoginStuff() {
+        val accessToken = AccessToken.getCurrentAccessToken()
+        val isLoggedIn = accessToken != null && !accessToken.isExpired
+        if (isLoggedIn) {
+            val intent = Intent(this@LoginActivity, HomepageActivity::class.java)
+            var request: GraphRequest = GraphRequest.newMeRequest(
+                AccessToken.getCurrentAccessToken()
+            ) { jsonObject, response ->
+                intent.putExtra("facebookData", FacebookHelpers.getFacebookData(jsonObject))
+                intent.putExtra("jsonString", jsonObject.toString())
+                intent.putExtra("profilePic", FacebookHelpers.getFacebookProfilePicture())
+                startActivity(intent)
+            }
+            request.executeAsync()
+        }
     }
 }

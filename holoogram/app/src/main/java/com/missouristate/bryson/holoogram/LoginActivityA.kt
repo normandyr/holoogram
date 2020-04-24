@@ -15,22 +15,22 @@ import com.facebook.login.LoginResult
 
 private const val AccessTokenForIntent = "Access Token"
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivityA : AppCompatActivity() {
     private lateinit var loginButton: Button
     private lateinit var createAccountButton: Button
     private lateinit var facebookButton: Button
     private lateinit var callbackManager: CallbackManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_login_a)
 
         //requestedorientation is only used for the video view.  We will need
         //to wait until we have a class activity for that view to implement the expression
         //below but I wanted to shwo that we had it ready to go when needed
         //requestedOrientation =  (ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        loginButton = findViewById(R.id.button_AttemptLogin_Main)
-        createAccountButton = findViewById(R.id.button_CreateAccount_Main)
+        loginButton = findViewById(R.id.LoginID)
+        createAccountButton = findViewById(R.id.CreateActID)
         facebookButton = findViewById(R.id.button_login_Facebook)
 
         loginButton.setOnClickListener{
@@ -57,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
                 val accessToken = AccessToken.getCurrentAccessToken()
                 val isLoggedIn = accessToken != null && !accessToken.isExpired
                 if (isLoggedIn) {
-                    val intent = Intent(this@LoginActivity, HomepageActivity::class.java)
+                    val intent = Intent(this@LoginActivityA, HomepageActivityA::class.java)
                     var request: GraphRequest = GraphRequest.newMeRequest(
                         AccessToken.getCurrentAccessToken()
                     ) { jsonObject, response ->
@@ -95,7 +95,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.contact -> {
-                val intent = Intent(this, ContactUsActivity::class.java)
+                val intent = Intent(this, ContactUsActivityA::class.java)
                 startActivity(intent)
             }
 

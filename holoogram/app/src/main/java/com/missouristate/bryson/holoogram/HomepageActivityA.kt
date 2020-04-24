@@ -21,10 +21,10 @@ private lateinit var jsonMap: Map<String, Any>
 private lateinit var fullNameField: EditText
 private lateinit var profilePic: ImageView
 
-class HomepageActivity : AppCompatActivity() {
+class HomepageActivityA : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_homepage)
+        setContentView(R.layout.activity_homepage_a)
     }
 
     override fun onStart(){
@@ -46,7 +46,7 @@ class HomepageActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.contact -> {
-                val intent = Intent(this, ContactUsActivity::class.java)
+                val intent = Intent(this, ContactUsActivityA::class.java)
                 startActivity(intent)
             }
 

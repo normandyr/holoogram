@@ -14,7 +14,7 @@ class SignupActivityA : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup_a)
-        signupButton = findViewById(R.id.button_AttemptSignUp_SignUp)
+        signupButton = findViewById(R.id.button5)
 
         signupButton.setOnClickListener{
             Toast.makeText(this, "Not available right now", Toast.LENGTH_SHORT).show()

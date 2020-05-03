@@ -30,7 +30,7 @@ class SignupActivityA : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.contact -> {
-                val intent = Intent(this, ContactUsActivity::class.java)
+                val intent = Intent(this, ContactUsActivityA::class.java)
                 startActivity(intent)
             }
 

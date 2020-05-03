@@ -1,0 +1,70 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.missouristate.bryson.holoogram"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:5:5-24:19
+12        android:allowBackup="true"
+12-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.0.2] C:\Users\A\.gradle\caches\transforms-2\files-2.1\aaca0b4c7bc5e3b44b7d05468fa4cf78\core-1.0.2\AndroidManifest.xml:22:18-86
+14        android:debuggable="true"
+15        android:icon="@mipmap/ic_launcher"
+15-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:7:9-43
+16        android:label="@string/app_name"
+16-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:8:9-41
+17        android:roundIcon="@mipmap/ic_launcher_round"
+17-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:9:9-54
+18        android:supportsRtl="true"
+18-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:10:9-35
+19        android:testOnly="true"
+20        android:theme="@style/AppTheme" >
+20-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:11:9-40
+21        <activity android:name="com.missouristate.bryson.holoogram.SignupActivity" />
+21-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:12:9-61
+21-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:12:19-49
+22        <activity
+22-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:13:9-15:60
+23            android:name="com.missouristate.bryson.holoogram.ui.login.LoginActivity"
+23-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:14:13-51
+24            android:label="@string/title_activity_login" />
+24-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:15:13-57
+25        <activity android:name="com.missouristate.bryson.holoogram.HomepageActivity" />
+25-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:16:9-54
+25-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:16:19-51
+26        <activity android:name="com.missouristate.bryson.holoogram.MainActivity" >
+26-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:17:9-23:20
+26-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:17:19-47
+27            <intent-filter>
+27-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:18:13-22:29
+28                <action android:name="android.intent.action.MAIN" />
+28-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:19:17-69
+28-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:19:25-66
+29
+30                <category android:name="android.intent.category.LAUNCHER" />
+30-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:21:17-77
+30-->C:\Users\A\Desktop\holoogram\holoogram\holoogram\app\src\main\AndroidManifest.xml:21:27-74
+31            </intent-filter>
+32        </activity>
+33
+34        <provider
+34-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\A\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:23:9-27:43
+35            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+35-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\A\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:24:13-79
+36            android:authorities="com.missouristate.bryson.holoogram.lifecycle-process"
+36-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\A\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:25:13-69
+37            android:exported="false"
+37-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\A\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:26:13-37
+38            android:multiprocess="true" />
+38-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\A\.gradle\caches\transforms-2\files-2.1\9bc22e9e17bf6e30f29bf2b1ae5951fb\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:27:13-40
+39    </application>
+40
+41</manifest>
